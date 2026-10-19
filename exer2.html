@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Despesas</title>
+    <link rel="stylesheet" href="exer2.css">
+    <script src="exer2.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Relatório de Despesas</h1>
+
+        <form id="formDespesa">
+            <label for="descricao">Descrição:</label>
+            <input
+                type="text"
+                id="descricao"
+                required
+                placeholder="Ex.: Compra no mercado"
+            >
+
+            <label for="valor">Valor (R$):</label>
+            <input
+                type="number"
+                id="valor"
+                min="0.01"
+                step="0.01"
+                required
+                placeholder="Ex.: 50.00"
+            >
+
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+
+            <button type="submit">Cadastrar despesa</button>
+        </form>
+
+        <section class="filtros">
+            <label for="filtroData">Filtrar por data:</label>
+            <input type="date" id="filtroData">
+
+            <button type="button" id="restaurar">
+                Mostrar todas
+            </button>
+
+            <button type="button" id="limpar">
+                Apagar todos os dados
+            </button>
+        </section>
+
+        <h2>Despesas cadastradas</h2>
+
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody id="listaDespesas"></tbody>
+            </table>
+        </div>
+
+        <h2 id="total">Total: R$ 0,00</h2>
+        <p id="mensagem" role="status"></p>
+    </main>
+
+</body>
+</html>
